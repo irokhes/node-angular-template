@@ -2,12 +2,8 @@
 var mongoose = require( 'mongoose' ); 
 
 // Build the connection string 
-if(process.env.MONGOLAB_URI){
-  var dbURI = process.env.MONGOLAB_URI
-}else{
-  var address = process.env.MONGO_PORT_27017_TCP_ADDR || 'localhost';
-  var dbURI = 'mongodb://' + address + ':27017/project'; 
-}
+// Build the connection string 
+var dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/project'
 
 
 // Create the database connection 
